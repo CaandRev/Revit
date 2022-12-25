@@ -1,0 +1,22 @@
+from Autodesk.Revit.DB import *
+from Autodesk.Revit.UI import *
+
+doc =__revit__.ActiveUIDocument.Document
+uidoc =__revit__.ActiveUIDocument
+curview = doc.ActiveView # gets current view
+
+filter = FilteredElementCollector(doc)
+
+views = filter.OfClass(ViewPlan)
+
+t = Transaction(doc, 'viewName')
+t.Start()
+
+for view in views:
+    startPos = view.Name.find('-')
+ 
+    if not view.IsTemplate:
+    	newViewName = view.GenLevel.Name + ' ' +view.Name[startPos:]  
+    	print(newViewName)
+    	view.Name = newViewName
+t.Commit()

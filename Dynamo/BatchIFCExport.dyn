@@ -1,0 +1,245 @@
+{
+  "Uuid": "e3da3c3a-b67f-40c4-bcc8-e459b1708feb",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "BatchIFCExport",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "92dcefd943904549a53a5ef6ec251be2",
+      "Name": "Filsti for RVT filer",
+      "Type": "string",
+      "Value": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM",
+      "Description": "Allows you to select a directory on the system to get its path"
+    },
+    {
+      "Id": "a9d56235d0eb49b089e1ab5d5a46f5c3",
+      "Name": "Filsti for exporterte ifc",
+      "Type": "string",
+      "Value": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM",
+      "Description": "Allows you to select a directory on the system to get its path"
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM\\Konstruksjon\\Revit_Sentralfil",
+      "Id": "ba62cd09b4b0479eb9e0a9d9aec79823",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "481c1e2aec044c95a59633eb01594326",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM\\Innsynsmodell",
+      "Id": "ba873bef057a4aa8b27a2b47962c704f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "11b6a3bf9839418a8d5b75cb024f4754",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Directory, CoreNodeModels",
+      "HintPath": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM",
+      "InputValue": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM",
+      "NodeType": "ExtensionNode",
+      "Id": "92dcefd943904549a53a5ef6ec251be2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "37c9e24619be460c96974c4c9901478b",
+          "Name": "",
+          "Description": "Directory",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a directory on the system to get its path"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Directory, CoreNodeModels",
+      "HintPath": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM",
+      "InputValue": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM",
+      "NodeType": "ExtensionNode",
+      "Id": "a9d56235d0eb49b089e1ab5d5a46f5c3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "12cf83eee8d14205903b9d8ccb9700f2",
+          "Name": "",
+          "Description": "Directory",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a directory on the system to get its path"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "59230150-d380-4252-81d8-2cdc6b742a51",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "874ca28fa0724320b5336bb851e0b902",
+      "Inputs": [
+        {
+          "Id": "abfbe897250448e8b294458981ce56fe",
+          "Name": "Directorypath",
+          "Description": "var\nDefault value : []..[]",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ce3ceb02e15240d08d8113c28fab9cc0",
+          "Name": "OutputFilePath",
+          "Description": "var\nDefault value : Directorypath",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "97110d92b6d34801abee9de5c49ea287",
+          "Name": "result",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Exportere ifc fra alle revit filler til et givet bibliotek"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "37c9e24619be460c96974c4c9901478b",
+      "End": "abfbe897250448e8b294458981ce56fe",
+      "Id": "ca9bbcf16553482ba6d7004b39bd5b5e"
+    },
+    {
+      "Start": "12cf83eee8d14205903b9d8ccb9700f2",
+      "End": "ce3ceb02e15240d08d8113c28fab9cc0",
+      "Id": "387098b806404f92949c866e9d5009ee"
+    }
+  ],
+  "Dependencies": [
+    "59230150-d380-4252-81d8-2cdc6b742a51"
+  ],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "ba62cd09b4b0479eb9e0a9d9aec79823",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 446.0,
+        "Y": 492.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "X:\\nor\\oppdrag\\Sogndal\\519\\07\\5190774\\BIM\\Innsynsmodell",
+        "Id": "ba873bef057a4aa8b27a2b47962c704f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 465.19823925475418,
+        "Y": 757.02551718952589
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Filsti for RVT filer",
+        "Id": "92dcefd943904549a53a5ef6ec251be2",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 528.33484709435334,
+        "Y": 583.98068813042732
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Filsti for exporterte ifc",
+        "Id": "a9d56235d0eb49b089e1ab5d5a46f5c3",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 526.093068180568,
+        "Y": 668.80088636222513
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "BatchIfcExport",
+        "Id": "874ca28fa0724320b5336bb851e0b902",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 774.23003206408544,
+        "Y": 577.079613348647
+      }
+    ],
+    "Annotations": [],
+    "X": -322.75337138241355,
+    "Y": -620.57891262329383,
+    "Zoom": 1.5907768970610714
+  }
+}
